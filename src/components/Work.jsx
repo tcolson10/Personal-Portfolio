@@ -6,7 +6,7 @@ function Experience() {
         <div name='work' className='w-full bg-[#0a192f] md:h-screen text-gray-300'>
             <div className='max-w-[1000] max-auto p-4 flex flex-col justify-center w-full h-full'>
                 <div className='pb-8'>
-                    <p className='text-4xl font-bold inline border-b-4 text-gray-300 border-green-300'>Work</p>
+                    <p className='text-4xl font-bold inline border-b-4 text-gray-400 border-green-400'>Work</p>
                     <p className='py-6'>Check out some of my recent work</p>
                 </div>
 
