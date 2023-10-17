@@ -6,6 +6,7 @@ import Logo from '../assets/TC (1).png';
 import { Link } from 'react-scroll';
 
 
+
 const Navbar = () => {
   const [nav, setNav] = useState(false)
   const handleClick = () => setNav(!nav)
