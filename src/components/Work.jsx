@@ -10,15 +10,16 @@ function Experience() {
                     <p className='py-6 text-gray-500 text-2xl'>Check out some of my recent work</p>
                 </div>
 
-                {/* container */}
+
+                {/* 
 
                 <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-4'>
 
-                    {/* Grid item */}
+                    
 
                     <div style={{ backgroundImage: `url(${workImg})` }} className=' shadow-lg shadow-[#040c16] group container rounded-md flex justify-center items-center mx-auto content-div'>
 
-                        {/* hover effects */}
+                        
 
                         <div className='opacity-0 group-hover:opacity-100'>
                             <div>
@@ -38,7 +39,7 @@ function Experience() {
                     </div>
                     <div style={{ backgroundImage: `url(${workImg})` }} className=' shadow-lg shadow-[#040c16] group container rounded-md flex justify-center items-center mx-auto content-div'>
 
-                        {/* hover effects */}
+                        
 
                         <div className='opacity-0 group-hover:opacity-100'>
                             <div>
@@ -56,7 +57,7 @@ function Experience() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>  */}
             </div>
         </div>
     )
