@@ -5,6 +5,7 @@ import ReactImg from '../assets/react.png';
 import Github from '../assets/github.png';
 import CSS from '../assets/css.png';
 import HTML from '../assets/html.png';
+import Java from '../assets/java.png';
 
 
 const Skills = () => {
@@ -40,13 +41,13 @@ const Skills = () => {
                     </div>
 
                     <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                        <img className='w-20 mx-auto pt-2' src={Github} alt='Github icon' />
-                        <p className='my-4'>Github</p>
+                        <img className='w-20 mx-auto pt-2' src={Java} alt='React icon' />
+                        <p className='my-4'>Java</p>
                     </div>
 
                     <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                        <img className='w-20 mx-auto pt-2' src={ReactImg} alt='React icon' />
-                        <p className='my-4'>React</p>
+                        <img className='w-20 mx-auto pt-2' src={Github} alt='Github icon' />
+                        <p className='my-4'>Github</p>
                     </div>
 
                 </div>
