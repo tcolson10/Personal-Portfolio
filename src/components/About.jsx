@@ -16,9 +16,9 @@ const About = () => {
                     </div>
                     <div>
                         <p className='text-white text-xl'>
-                            I'm Trevor Colson, I live in Provo, Utah, and I am currently pursuing my degree in Information Systems at the University of Utah.
+                            I'm Trevor Colson, I live in Salt Lake City, Utah, and I am currently pursuing my degree in Information Systems at the University of Utah.
                             I have always had a passion for technology and I am an aspiring software engineer. I've had the privilege of working as a full-time web developer,
-                            and hope to be able to continue my journey in the world of tech. I am looking for internships for the Summer of 2024 as well as any other type of related job opportunities.
+                            as well as a software engineer intern with Fidelity Investments. I hope to be able to continue my journey in the world of tech. I am looking for full-time positions starting in the Summer of 2025.
                         </p>
 
                     </div>
