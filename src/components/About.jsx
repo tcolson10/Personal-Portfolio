@@ -23,13 +23,12 @@ const About = () => {
 							I'm Trevor Colson, I live in Salt Lake City, Utah, and I recently
 							graduated with my degree in Information Systems from the
 							University of Utah. I have always had a passion for technology and
-							I am a software engineer with professional experience working with
-							the Utah Jazz and Mammoth as well as with Optix Solutions. Through
-							these roles, I've gained valuable experience in web development
-							and software engineering, and I'm excited to continue growing in
-							the tech industry. I am actively seeking new opportunities and
-							full-time positions where I can contribute my skills and continue
-							learning.
+							I am a software engineer with professional experience working at
+							Jazz Technologies and Optix. Through these roles, I've gained
+							valuable experience in web development and software engineering,
+							and I'm excited to continue growing in the tech industry. I am
+							actively seeking new opportunities and full-time positions where I
+							can contribute my skills and continue learning.
 						</p>
 					</div>
 				</div>
