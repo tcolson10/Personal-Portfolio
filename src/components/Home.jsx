@@ -185,7 +185,7 @@ const Home = ({ introComplete }) => {
             <button className="btn-accent text-base">View My Work</button>
           </Link>
           <a href="/My Resume.pdf" target="_blank" rel="noopener noreferrer">
-            <button className="btn-outline text-base">Download Resume</button>
+            <button className="btn-outline text-base">Resume</button>
           </a>
         </motion.div>
       </div>
