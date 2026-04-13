@@ -92,7 +92,7 @@ const Projects = () => {
                 </div>
 
                 {/* Content */}
-                <div className={`flex flex-col justify-center p-8 lg:p-10 ${i % 2 === 1 ? 'lg:col-start-1' : ''}`}>
+                <div className={`flex flex-col justify-center p-5 sm:p-8 lg:p-10 ${i % 2 === 1 ? 'lg:col-start-1' : ''}`}>
                   <div
                     className="text-xs font-semibold tracking-widest uppercase mb-3"
                     style={{ color: project.accent }}

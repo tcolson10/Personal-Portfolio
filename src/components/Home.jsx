@@ -136,7 +136,7 @@ const Home = ({ introComplete }) => {
         </motion.p>
 
         {/* Name — word-by-word reveal */}
-        <h1 className="text-6xl sm:text-8xl lg:text-[108px] font-bold text-white leading-none tracking-tight mb-6">
+        <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[108px] font-bold text-white leading-none tracking-tight mb-6">
           <span style={{ display: 'inline-block', overflow: 'hidden', verticalAlign: 'bottom' }}>
             <motion.span className="inline-block" {...wordReveal(introComplete, 0.08)}>
               Trevor

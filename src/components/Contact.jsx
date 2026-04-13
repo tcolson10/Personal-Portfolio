@@ -136,7 +136,7 @@ const Contact = () => {
             viewport={{ once: true }}
             variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1, delayChildren: 0.15 } } }}
           >
-            <motion.div variants={fadeUp} className="glass p-8">
+            <motion.div variants={fadeUp} className="glass p-5 sm:p-8">
               <form
                 method="POST"
                 action="https://getform.io/f/0f62fa35-34fd-4175-a8b9-b8ec2c5b1800"

@@ -109,11 +109,11 @@ const Experience = () => {
                   color: activeJob === i ? '#fff' : '#64748b',
                 }}
               >
-                {/* Active accent line */}
+                {/* Active accent line — left side on desktop, bottom on mobile */}
                 {activeJob === i && (
                   <motion.div
                     layoutId="activeTab"
-                    className="absolute left-0 top-0 bottom-0 w-0.5 rounded-full"
+                    className="absolute md:left-0 md:top-0 md:bottom-0 md:w-0.5 md:h-auto left-0 right-0 bottom-0 h-0.5 w-auto rounded-full"
                     style={{ background: j.color }}
                   />
                 )}
@@ -129,7 +129,7 @@ const Experience = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="glass p-8"
+            className="glass p-5 sm:p-8"
           >
             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-6">
               <div>

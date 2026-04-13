@@ -72,7 +72,7 @@ const About = () => {
           About Me
         </motion.p>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           {/* Left — statement + bio */}
           <div>
             <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-8">
