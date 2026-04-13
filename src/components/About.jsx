@@ -50,7 +50,7 @@ const About = () => {
   return (
     <section
       name="about"
-      className="relative w-full py-32 bg-[#070707] overflow-hidden"
+      className="relative w-full py-16 sm:py-28 lg:py-32 bg-[#070707] overflow-hidden"
     >
       {/* Subtle orb accent */}
       <div
@@ -75,7 +75,7 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           {/* Left — statement + bio */}
           <div>
-            <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-8">
+            <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-5 sm:mb-8">
               <RevealText delay={0.1}>Passionate about building</RevealText>
               {' '}
               <RevealText delay={0.35} wordClassName="gradient-text">products that matter.</RevealText>

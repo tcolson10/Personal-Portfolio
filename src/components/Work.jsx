@@ -35,7 +35,7 @@ const Projects = () => {
   return (
     <section
       name="projects"
-      className="relative w-full py-32 bg-[#070707] overflow-hidden"
+      className="relative w-full py-16 sm:py-28 lg:py-32 bg-[#070707] overflow-hidden"
     >
       {/* Accent orb */}
       <div
@@ -57,7 +57,7 @@ const Projects = () => {
           Projects
         </motion.p>
 
-        <h2 className="text-4xl sm:text-5xl font-bold text-white mb-16 leading-tight">
+        <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8 sm:mb-16 leading-tight">
           <RevealText delay={0.1}>Things I've</RevealText>
           {' '}
           <RevealText delay={0.25} wordClassName="gradient-text">built.</RevealText>

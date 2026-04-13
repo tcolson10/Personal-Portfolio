@@ -48,7 +48,7 @@ const Contact = () => {
   return (
     <section
       name="contact"
-      className="relative w-full py-32 bg-[#070707] overflow-hidden"
+      className="relative w-full py-16 sm:py-28 lg:py-32 bg-[#070707] overflow-hidden"
     >
       {/* Accent orbs */}
       <div

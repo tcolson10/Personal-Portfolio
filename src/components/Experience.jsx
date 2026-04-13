@@ -56,7 +56,7 @@ const Experience = () => {
   return (
     <section
       name="experience"
-      className="relative w-full py-32 bg-[#070707] overflow-hidden"
+      className="relative w-full py-16 sm:py-28 lg:py-32 bg-[#070707] overflow-hidden"
     >
       {/* Background accent */}
       <div
@@ -78,7 +78,7 @@ const Experience = () => {
           Experience
         </motion.p>
 
-        <h2 className="text-4xl sm:text-5xl font-bold text-white mb-16 leading-tight">
+        <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8 sm:mb-16 leading-tight">
           <RevealText delay={0.1}>Where I've</RevealText>
           {' '}
           <RevealText delay={0.25} wordClassName="gradient-text">worked.</RevealText>
@@ -94,7 +94,7 @@ const Experience = () => {
           {/* Tab list */}
           <motion.div
             variants={fadeUp}
-            className="flex md:flex-col gap-1 overflow-x-auto md:overflow-visible pb-2 md:pb-0"
+            className="flex flex-col gap-1"
           >
             {JOBS.map((j, i) => (
               <button
