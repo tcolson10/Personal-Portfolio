@@ -2,29 +2,222 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
-@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Raleway&display=swap');
+  body {
+    background-color: #070707;
+    color: #e2e8f0;
+    font-family: 'Space Grotesk', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
 
-@layer base{
-    body {
-    @apply font-[Raleway];
-    }
-    li {
-        @apply px-4;
-        @apply cursor-pointer
-    } 
 }
 
-.content-div{
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 250px;
+/* ─── Design Tokens ───────────────────────────────────────── */
+:root {
+  --bg:           #070707;
+  --surface:      rgba(255, 255, 255, 0.04);
+  --border:       rgba(255, 255, 255, 0.08);
+  --accent:       #00d4ff;
+  --accent-dim:   rgba(0, 212, 255, 0.12);
+  --accent-glow:  rgba(0, 212, 255, 0.25);
+  --purple:       #7c3aed;
+  --text:         #e2e8f0;
+  --muted:        #64748b;
 }
-.content-div:hover {
-background-image: linear-gradient(
-    to right,
-    rgba(112,157,255,0.8),
-    hsla(242,74%, 61%, 0.8)
-)!important;
+
+/* ─── Animated Background Orbs ───────────────────────────── */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+  will-change: transform;
+}
+
+.orb-cyan {
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.18), transparent 70%);
+  top: -200px;
+  left: -200px;
+  animation: driftA 25s ease-in-out infinite;
+}
+
+.orb-purple {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.15), transparent 70%);
+  bottom: -150px;
+  right: -150px;
+  animation: driftB 30s ease-in-out infinite;
+}
+
+.orb-blue {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(30, 64, 175, 0.12), transparent 70%);
+  top: 40%;
+  left: 40%;
+  animation: driftC 20s ease-in-out infinite;
+}
+
+@keyframes driftA {
+  0%,  100% { transform: translate(0px,  0px)  scale(1);    }
+  33%        { transform: translate(40px, -50px) scale(1.06); }
+  66%        { transform: translate(-30px, 30px) scale(0.94); }
+}
+
+@keyframes driftB {
+  0%,  100% { transform: translate(0px,   0px)  scale(1);    }
+  33%        { transform: translate(-50px, 40px) scale(1.08); }
+  66%        { transform: translate(30px, -20px) scale(0.92); }
+}
+
+@keyframes driftC {
+  0%,  100% { transform: translate(-50%, -50%) scale(1);    }
+  50%        { transform: translate(-50%, -50%) scale(1.15); }
+}
+
+/* ─── Glassmorphism Card ─────────────────────────────────── */
+.glass {
+  background: var(--surface);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+.glass-hover {
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.glass-hover:hover {
+  border-color: rgba(0, 212, 255, 0.25);
+  box-shadow: 0 0 40px rgba(0, 212, 255, 0.08);
+  transform: translateY(-4px);
+}
+
+/* ─── Accent Glow Button ─────────────────────────────────── */
+.btn-accent {
+  background: var(--accent);
+  color: #000;
+  font-weight: 600;
+  border-radius: 9999px;
+  padding: 14px 32px;
+  transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.btn-accent:hover {
+  box-shadow: 0 0 40px var(--accent-glow), 0 0 80px rgba(0, 212, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e2e8f0;
+  border-radius: 9999px;
+  padding: 14px 32px;
+  transition: border-color 0.3s, background 0.3s, transform 0.2s;
+}
+
+.btn-outline:hover {
+  border-color: rgba(0, 212, 255, 0.4);
+  background: rgba(0, 212, 255, 0.06);
+  transform: translateY(-2px);
+}
+
+/* ─── Section Label ──────────────────────────────────────── */
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+/* ─── Timeline ───────────────────────────────────────────── */
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0, 212, 255, 0.3) 10%,
+    rgba(0, 212, 255, 0.3) 90%,
+    transparent
+  );
+  transform: translateX(-50%);
+}
+
+/* ─── Skill Badge ────────────────────────────────────────── */
+.skill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text);
+  transition: border-color 0.25s, background 0.25s, transform 0.25s;
+}
+
+.skill-badge:hover {
+  border-color: var(--accent);
+  background: var(--accent-dim);
+  transform: translateY(-2px);
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.1);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 212, 255, 0.3);
+}
+
+/* ─── Cursor blink ───────────────────────────────────────── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* ─── Noise overlay (subtle texture) ────────────────────── */
+.noise::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9997;
+  opacity: 0.4;
+}
+
+/* ─── Gradient text ──────────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }

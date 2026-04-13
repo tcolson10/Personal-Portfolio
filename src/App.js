@@ -1,18 +1,36 @@
-import Navbar from "./components/Navbar";
-import Home from './components/Home'
-import About from "./components/About";
-import Skills from "./components/Skills";
-import Work from "./components/Work";
-import Contact from "./components/Contact";
+import { useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
+import Intro from './components/Intro';
+import ScrollProgress from './components/ScrollProgress';
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import About from './components/About';
+import Experience from './components/Experience';
+import Skills from './components/Skills';
+import Projects from './components/Work';
+import Contact from './components/Contact';
 
 function App() {
+  const [showIntro, setShowIntro] = useState(true);
+  const [introComplete, setIntroComplete] = useState(false);
+
+  const handleIntroComplete = () => {
+    setShowIntro(false);
+    setIntroComplete(true);
+  };
+
   return (
-    <div>
+    <div className="bg-[#070707] noise">
+      <AnimatePresence>
+        {showIntro && <Intro key="intro" onComplete={handleIntroComplete} />}
+      </AnimatePresence>
+      <ScrollProgress />
       <Navbar />
-      <Home />
+      <Home introComplete={introComplete} />
       <About />
+      <Experience />
       <Skills />
-      <Work />
+      <Projects />
       <Contact />
     </div>
   );

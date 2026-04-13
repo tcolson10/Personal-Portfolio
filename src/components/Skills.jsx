@@ -1,62 +1,139 @@
-import React from 'react'
-import JavaScript from '../assets/javascript.png';
-import Python from '../assets/python.png';
-import ReactImg from '../assets/react.png';
-import Github from '../assets/github.png';
-import CSS from '../assets/css.png';
-import HTML from '../assets/html.png';
-import Java from '../assets/java.png';
+import React from 'react';
+import { motion } from 'framer-motion';
+import RevealText from './RevealText';
 
+const SKILL_GROUPS = [
+  {
+    category: 'Languages',
+    color:    '#f59e0b',
+    skills: [
+      { name: 'JavaScript', dot: '#f7df1e' },
+      { name: 'Python',     dot: '#3b82f6' },
+      { name: 'Java',       dot: '#ef4444' },
+      { name: 'SQL',        dot: '#8b5cf6' },
+      { name: 'HTML',       dot: '#f97316' },
+      { name: 'CSS',        dot: '#38bdf8' },
+    ],
+  },
+  {
+    category: 'Frameworks & Libraries',
+    color:    '#00d4ff',
+    skills: [
+      { name: 'React',    dot: '#61dafb' },
+      { name: 'Next.js',  dot: '#e2e8f0' },
+      { name: 'Django',   dot: '#10b981' },
+    ],
+  },
+  {
+    category: 'Tools & Platforms',
+    color:    '#10b981',
+    skills: [
+      { name: 'Firebase',   dot: '#f59e0b' },
+      { name: 'Docker',     dot: '#2496ed' },
+      { name: 'Jenkins',    dot: '#e2e8f0' },
+      { name: 'Kubernetes', dot: '#326ce5' },
+      { name: 'Git/GitHub', dot: '#e2e8f0' },
+      { name: 'Tableau',    dot: '#1f77b4' },
+    ],
+  },
+  {
+    category: 'Core Competencies',
+    color:    '#7c3aed',
+    skills: [
+      { name: 'Business Systems Analysis', dot: '#7c3aed' },
+      { name: 'Process Improvement',       dot: '#7c3aed' },
+      { name: 'Data Analysis',             dot: '#7c3aed' },
+      { name: 'English & Spanish (Fluent)', dot: '#7c3aed' },
+    ],
+  },
+];
+
+const fadeUp = {
+  hidden:  { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
+};
 
 const Skills = () => {
-    return (
-        <div name='skills' className='w-full h-screen bg-gray-900  text-gray-400'>
+  return (
+    <section
+      name="skills"
+      className="relative w-full py-32 bg-[#070707] overflow-hidden"
+    >
+      {/* Accent orb */}
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full pointer-events-none"
+        style={{
+          background: 'radial-gradient(circle, rgba(124,58,237,0.05), transparent 60%)',
+          filter: 'blur(80px)',
+        }}
+      />
 
-            {/* container */}
+      <div className="max-w-6xl mx-auto px-6 lg:px-8">
+        <motion.p
+          className="section-label"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeUp}
+        >
+          Technical Skills
+        </motion.p>
 
-            <div className='max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full'>
-                <div>
-                    <p className='text-4xl font-bold inline border-b-4 text-white border-[#4285F4]'>Skills</p>
-                    <p className='py-4 text-gray-500 text-2xl'>These are the technologies that I've worked with</p>
-                </div>
-                <div className='w-full grid grid-cols-2 sm:grid-cols-3 gap-4 text-center py-8'>
+        <h2 className="text-4xl sm:text-5xl font-bold text-white mb-16 leading-tight">
+          <RevealText delay={0.1}>What I</RevealText>
+          {' '}
+          <RevealText delay={0.2} wordClassName="gradient-text">work with.</RevealText>
+        </h2>
 
+        <div className="grid sm:grid-cols-2 gap-6">
+          {SKILL_GROUPS.map((group, gi) => (
+            <motion.div
+              key={group.category}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-60px' }}
+              variants={{
+                hidden:  {},
+                visible: { transition: { staggerChildren: 0.06, delayChildren: gi * 0.1 } },
+              }}
+              className="glass p-6"
+            >
+              {/* Category header */}
+              <motion.div variants={fadeUp} className="flex items-center gap-2 mb-5">
+                <div
+                  className="w-1.5 h-5 rounded-full"
+                  style={{ background: group.color }}
+                />
+                <span
+                  className="text-xs font-semibold tracking-widest uppercase"
+                  style={{ color: group.color }}
+                >
+                  {group.category}
+                </span>
+              </motion.div>
 
-                    <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                        <img className='w-20 mx-auto pt-2' src={Python} alt='Python icon' />
-                        <p className='my-4'>Python</p>
-                    </div>
-                   
-                    <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                        <img className='w-20 mx-auto pt-2' src={JavaScript} alt='JavaScript icon' />
-                        <p className='my-4'>JavaScript</p>
-                    </div>
-
-                    <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                        <img className='w-20 mx-auto pt-2' src={Java} alt='React icon' />
-                        <p className='my-4'>Java</p>
-                    </div>
-
-                     <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                        <img className='w-20 mx-auto pt-2' src={HTML} alt='Html icon' />
-                        <p className='my-4'>HTML</p>
-                    </div>
-
-                    <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                        <img className='w-20 mx-auto pt-2' src={CSS} alt='CSS icon' />
-                        <p className='my-4'>CSS</p>
-                    </div>
-
-
-                    <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                        <img className='w-20 mx-auto pt-2' src={Github} alt='Github icon' />
-                        <p className='my-4'>Github</p>
-                    </div>
-
-                </div>
-            </div>
+              {/* Badge grid */}
+              <div className="flex flex-wrap gap-2">
+                {group.skills.map(({ name, dot }) => (
+                  <motion.span
+                    key={name}
+                    variants={fadeUp}
+                    className="skill-badge"
+                  >
+                    <span
+                      className="w-1.5 h-1.5 rounded-full flex-shrink-0"
+                      style={{ background: dot }}
+                    />
+                    {name}
+                  </motion.span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
         </div>
-    )
-}
+      </div>
+    </section>
+  );
+};
 
-export default Skills
+export default Skills;
