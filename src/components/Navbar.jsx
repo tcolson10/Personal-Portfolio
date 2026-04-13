@@ -81,12 +81,12 @@ const Navbar = () => {
             href="/My Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden md:flex items-center gap-2 text-sm font-medium text-[#00d4ff] rounded-full px-4 py-2 transition-all duration-200"
+            className="hidden md:flex items-center gap-2 text-sm font-medium text-[#00d4ff] rounded-full px-4 py-2 transition-all duration-200 whitespace-nowrap"
             style={{ border: '1px solid rgba(0,212,255,0.3)' }}
             onMouseEnter={e => (e.currentTarget.style.background = 'rgba(0,212,255,0.08)')}
             onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}
           >
-            Resume ↗
+            Resume&nbsp;↗
           </a>
 
           {/* Hamburger — mobile */}
