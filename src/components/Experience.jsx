@@ -51,7 +51,6 @@ const fadeUp = {
 
 const Experience = () => {
   const [activeJob, setActiveJob] = useState(0);
-  const job = JOBS[activeJob];
 
   return (
     <section
