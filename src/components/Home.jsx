@@ -3,7 +3,7 @@ import { motion, useMotionValue, useSpring } from 'framer-motion';
 import { Link } from 'react-scroll';
 import { FiChevronDown } from 'react-icons/fi';
 
-const ROLES = ['Software Engineer', 'Problem Solver', 'Technologist', 'Builder'];
+const ROLES = ['Technologist', 'Business Analyst', 'Problem Solver', 'Builder'];
 
 const useTypewriter = (words, typingSpeed = 90, deletingSpeed = 50, pauseMs = 2000) => {
   const [wordIndex, setWordIndex] = useState(0);
@@ -173,7 +173,7 @@ const Home = ({ introComplete }) => {
           {...fade(introComplete, 0.65)}
           className="text-gray-500 text-base sm:text-lg max-w-xl mx-auto mb-12 leading-relaxed"
         >
-          Software engineer based in Salt Lake City, UT.
+          Business-minded technologist based in Salt Lake City, UT.
         </motion.p>
 
         {/* CTAs */}

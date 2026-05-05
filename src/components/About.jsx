@@ -88,9 +88,9 @@ const About = () => {
               viewport={{ once: true }}
               variants={{ ...fadeUp, visible: { ...fadeUp.visible, transition: { duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] } } }}
             >
-              I'm a software engineer based in Salt Lake City, Utah. I recently graduated with a
-              B.S. in Information Systems from the University of Utah's David Eccles School of
-              Business, where I was awarded a full-tuition scholarship and maintained a 3.5 GPA.
+              Based in Salt Lake City, Utah, I graduated with a B.S. in Information Systems from
+              the University of Utah's David Eccles School of Business, where I was awarded a
+              full-tuition scholarship and maintained a 3.5 GPA.
             </motion.p>
 
             <motion.p
@@ -102,8 +102,9 @@ const About = () => {
             >
               I've shipped production software at Optix Inspections, worked as a full-stack intern
               at Fidelity Investments building CI/CD pipelines and cloud microservices, and supported
-              digital operations at the Utah Jazz & Utah Mammoth. I'm actively looking for my next
-              opportunity to build something great.
+              digital operations at the Utah Jazz & Utah Mammoth. I sit at the intersection of
+              technology and business strategy — and I'm actively looking for my next opportunity to
+              build something great.
             </motion.p>
 
             <motion.div

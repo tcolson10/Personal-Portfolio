@@ -122,47 +122,48 @@ const Experience = () => {
             ))}
           </motion.div>
 
-          {/* Job detail panel */}
-          <motion.div
-            key={activeJob}
-            variants={fadeUp}
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="glass p-5 sm:p-8"
-          >
-            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-6">
-              <div>
-                <h3 className="text-xl font-bold text-white mb-1">
-                  {job.role}{' '}
-                  <span style={{ color: job.color }}>@ {job.company}</span>
-                </h3>
-                <p className="text-gray-500 text-sm">{job.location}</p>
-              </div>
-              <span
-                className="text-xs font-medium px-3 py-1.5 rounded-full self-start sm:self-auto flex-shrink-0"
-                style={{
-                  background: `${job.color}15`,
-                  border: `1px solid ${job.color}30`,
-                  color: job.color,
-                }}
+          {/* Job detail panels — all rendered, stacked in same grid cell so height never changes */}
+          <div className="grid">
+            {JOBS.map((j, i) => (
+              <div
+                key={i}
+                style={{ gridArea: '1/1', pointerEvents: activeJob === i ? 'auto' : 'none' }}
+                className={`glass p-5 sm:p-8 transition-opacity duration-300 ${activeJob === i ? 'opacity-100' : 'opacity-0'}`}
               >
-                {job.period}
-              </span>
-            </div>
-
-            <ul className="space-y-4">
-              {job.bullets.map((b, i) => (
-                <li key={i} className="flex gap-3 text-gray-400 text-sm leading-relaxed">
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-6">
+                  <div>
+                    <h3 className="text-xl font-bold text-white mb-1">
+                      {j.role}{' '}
+                      <span style={{ color: j.color }}>@ {j.company}</span>
+                    </h3>
+                    <p className="text-gray-500 text-sm">{j.location}</p>
+                  </div>
                   <span
-                    className="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0"
-                    style={{ background: job.color }}
-                  />
-                  {b}
-                </li>
-              ))}
-            </ul>
-          </motion.div>
+                    className="text-xs font-medium px-3 py-1.5 rounded-full self-start sm:self-auto flex-shrink-0"
+                    style={{
+                      background: `${j.color}15`,
+                      border: `1px solid ${j.color}30`,
+                      color: j.color,
+                    }}
+                  >
+                    {j.period}
+                  </span>
+                </div>
+
+                <ul className="space-y-4">
+                  {j.bullets.map((b, bi) => (
+                    <li key={bi} className="flex gap-3 text-gray-400 text-sm leading-relaxed">
+                      <span
+                        className="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0"
+                        style={{ background: j.color }}
+                      />
+                      {b}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>
